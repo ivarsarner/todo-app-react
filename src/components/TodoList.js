@@ -6,7 +6,7 @@ const TodoList = () => {
 	return (
 		<section className="todo-list">
 			{todos.map((todo) => (
-				<div key={todo.id}>
+				<div className="todo-list__todo-card" key={todo.id}>
 					<p>{todo.title}</p>
 					<p>{todo.desc}</p>
 				</div>

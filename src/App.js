@@ -5,7 +5,9 @@ import TodoContextProvider from './contexts/TodoContext';
 function App() {
 	return (
 		<TodoContextProvider>
-			<TodoList />
+			<main className="todo">
+				<TodoList />
+			</main>
 		</TodoContextProvider>
 	);
 }
