@@ -10,7 +10,7 @@ const TodoForm = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		todosActions.addTodo({ id: uuid(), title, desc });
+		todosActions.addTodo({ id: uuid(), title, desc, done: false });
 		setTitle('');
 		setDesc('');
 	};
