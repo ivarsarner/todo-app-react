@@ -1,25 +1,26 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../contexts/TodoContext';
-import Button from '@material-ui/core/Button';
 
 const TodoList = () => {
 	const { todos } = useContext(TodoContext);
 	return (
-		<main className="todo">
-			<section className="todo-addbtn">
-				<Button variant="contained" color="primary">
-					Add new todo
-				</Button>
-			</section>
-			<section className="todo-list">
-				{todos.map((todo) => (
+		<section className="todo-list">
+			<header>
+				<h3>Stuff to do:</h3>
+			</header>
+			{todos.length ? (
+				todos.map((todo) => (
 					<div className="todo-list__todo-card" key={todo.id}>
-						<p>{todo.title}</p>
-						<p>{todo.desc}</p>
+						<div className="todo-title">{todo.title}</div>
+						<div className="todo-desc">{todo.desc}</div>
 					</div>
-				))}
-			</section>
-		</main>
+				))
+			) : (
+				<div className="todo-list__todo-card no-todo">
+					No todos found, please add a new todo
+				</div>
+			)}
+		</section>
 	);
 };
 

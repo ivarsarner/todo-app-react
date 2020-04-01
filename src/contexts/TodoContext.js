@@ -1,5 +1,4 @@
-import React, { createContext, useState } from 'react';
-import uuid from 'uuid/v4';
+import React, { createContext, useState, useEffect } from 'react';
 
 export const TodoContext = createContext();
 
@@ -17,8 +16,16 @@ const TodoContextProvider = (props) => {
 		},
 	]);
 
+	const addTodo = (newTodo) => {
+		setTodos([...todos, newTodo]);
+	};
+
+	useEffect(() => {
+		localStorage.setItem('todos', JSON.stringify(todos));
+	}, [todos]);
+
 	return (
-		<TodoContext.Provider value={{ todos }}>
+		<TodoContext.Provider value={{ todos, todosActions: { addTodo } }}>
 			{props.children}
 		</TodoContext.Provider>
 	);
