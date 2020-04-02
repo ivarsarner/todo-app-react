@@ -4,10 +4,6 @@ import { TodoContext } from '../contexts/TodoContext';
 const TodoList = () => {
 	const { todos, todosActions } = useContext(TodoContext);
 
-	const handleClick = (e) => {
-		todosActions.completeTodo(e.target.key);
-	};
-
 	return (
 		<section className="todo-list">
 			<header>
@@ -20,7 +16,7 @@ const TodoList = () => {
 					<div
 						className="todo-list__todo-card"
 						key={todo.id}
-						onClick={handleClick}
+						onClick={() => todosActions.completeTodo(todo.id)}
 					>
 						<div className="todo-title">{todo.title}</div>
 						<div className="todo-desc">{todo.desc}</div>
