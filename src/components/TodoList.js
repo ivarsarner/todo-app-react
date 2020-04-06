@@ -16,7 +16,7 @@ const TodoList = () => {
 					<div
 						className="todo-list__todo-card"
 						key={todo.id}
-						onClick={() => todosActions.completeTodo(todo.id)}
+						onClick={() => todosActions.toggleDone(todo.id)}
 					>
 						<div className="todo-title">{todo.title}</div>
 						<div className="todo-desc">{todo.desc}</div>

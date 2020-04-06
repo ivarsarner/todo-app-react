@@ -16,8 +16,8 @@ const TodoContextProvider = (props) => {
 		setTodos(todos.filter((todo) => todo.id !== id));
 	};
 
-	const completeTodo = (id) => {
-		console.log(id);
+	const toggleDone = (id) => {
+		console.log(todos.find((todo) => todo.id === id));
 	};
 
 	useEffect(() => {
@@ -26,7 +26,7 @@ const TodoContextProvider = (props) => {
 
 	return (
 		<TodoContext.Provider
-			value={{ todos, todosActions: { addTodo, removeTodo, completeTodo } }}
+			value={{ todos, todosActions: { addTodo, removeTodo, toggleDone } }}
 		>
 			{props.children}
 		</TodoContext.Provider>
