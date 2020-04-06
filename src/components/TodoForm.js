@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { TodoContext } from '../contexts/TodoContext';
-import uuid from 'uuid/v4';
 
 const TodoForm = () => {
 	const [title, setTitle] = useState('');
@@ -10,7 +9,7 @@ const TodoForm = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		todosActions.addTodo({ id: uuid(), title, desc, done: false });
+		todosActions.addTodo(title, desc);
 		setTitle('');
 		setDesc('');
 	};

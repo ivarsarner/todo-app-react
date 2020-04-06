@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
+import uuid from 'uuid/v4';
 
 export const TodoContext = createContext();
 
@@ -8,7 +9,8 @@ const TodoContextProvider = (props) => {
 		return localData ? JSON.parse(localData) : [];
 	});
 
-	const addTodo = (newTodo) => {
+	const addTodo = (title, desc) => {
+		const newTodo = { id: uuid(), title, desc, done: false };
 		setTodos([...todos, newTodo]);
 	};
 
@@ -17,7 +19,10 @@ const TodoContextProvider = (props) => {
 	};
 
 	const toggleDone = (id) => {
-		console.log(todos.find((todo) => todo.id === id));
+		const todo = todos.find((todo) => todo.id === id);
+		console.log(todo);
+		console.log(todos);
+		//setTodos();
 	};
 
 	useEffect(() => {
