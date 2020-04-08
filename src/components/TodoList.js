@@ -12,17 +12,26 @@ const TodoList = () => {
           {todos.filter((todo) => todo.done).length}
         </h3>
       </header>
+      <button
+        className="todo-list__remove-btn"
+        onClick={() => todosActions.removeTodos()}
+      >
+        Remove completed todos
+      </button>
       {todos.length ? (
         todos.map((todo) => (
-          <div
-            className={`todo-list__card${todo.done ? '--done' : '--not-done'}`}
-            key={todo.id}
-            onClick={() => todosActions.toggleDone(todo.id)}
-          >
-            <div className="todo-list__card__title">{todo.title}</div>
-            <div className="todo-list__card__desc">{todo.desc}</div>
-            <p>{todo.done}</p>
-          </div>
+          <>
+            <div
+              className={`todo-list__card${
+                todo.done ? '--done' : '--not-done'
+              }`}
+              key={todo.id}
+              onClick={() => todosActions.toggleDone(todo.id)}
+            >
+              <div className="todo-list__card__title">{todo.title}</div>
+              <div className="todo-list__card__desc">{todo.desc}</div>
+            </div>
+          </>
         ))
       ) : (
         <div className="todo-list__no-todo">

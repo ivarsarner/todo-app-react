@@ -14,8 +14,8 @@ const TodoContextProvider = (props) => {
     setTodos([...todos, newTodo]);
   };
 
-  const removeTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+  const removeTodos = () => {
+    setTodos(todos.filter((todo) => !todo.done));
   };
 
   const toggleDone = (id) => {
@@ -31,7 +31,7 @@ const TodoContextProvider = (props) => {
 
   return (
     <TodoContext.Provider
-      value={{ todos, todosActions: { addTodo, removeTodo, toggleDone } }}
+      value={{ todos, todosActions: { addTodo, removeTodos, toggleDone } }}
     >
       {props.children}
     </TodoContext.Provider>

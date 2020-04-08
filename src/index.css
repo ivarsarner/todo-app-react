@@ -33,6 +33,11 @@
   margin-bottom: 15px;
 }
 
+.todo-list__remove-btn {
+  padding: 5px 5px;
+  margin-bottom: 10px;
+}
+
 .todo-list__card--not-done {
   padding: 10px 10px;
   width: 300px;
@@ -48,7 +53,7 @@
   font-size: 0.8em;
 }
 
-.todo-list__card:hover {
+.todo-list__card--not-done:hover {
   background-color: rgba(0, 0, 0, 0.062);
 }
 
