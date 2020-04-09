@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { TodoContext } from '../contexts/TodoContext';
+import TodoCard from './TodoCard';
 
 const TodoList = () => {
   const { todos, todosActions } = useContext(TodoContext);
@@ -19,20 +20,7 @@ const TodoList = () => {
         Remove completed todos
       </button>
       {todos.length ? (
-        todos.map((todo) => (
-          <>
-            <div
-              className={`todo-list__card${
-                todo.done ? '--done' : '--not-done'
-              }`}
-              key={todo.id}
-              onClick={() => todosActions.toggleDone(todo.id)}
-            >
-              <div className="todo-list__card__title">{todo.title}</div>
-              <div className="todo-list__card__desc">{todo.desc}</div>
-            </div>
-          </>
-        ))
+        todos.map((todo) => <TodoCard key={todo.id} todo={todo} />)
       ) : (
         <div className="todo-list__no-todo">
           No todos found, please add a new todo
