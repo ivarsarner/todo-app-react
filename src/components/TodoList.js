@@ -14,7 +14,7 @@ const TodoList = () => {
         </h3>
       </header>
       <button
-        className="todo-list__remove-btn"
+        className="todo-list__remove-btn button"
         onClick={() => todosActions.removeTodos()}
       >
         Remove completed todos

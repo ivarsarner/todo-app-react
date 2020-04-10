@@ -21,6 +21,10 @@
   margin: 20px 0 40px;
 }
 
+.todo-form {
+  display: flex;
+}
+
 .todo-list {
   padding: 30px 30px;
   width: 500px;
@@ -65,4 +69,33 @@
   background-color: rgba(0, 0, 0, 0.2);
   text-decoration: line-through;
   order: 1;
+}
+
+.button {
+  background-color: #4cafa7;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #4cafa7b0;
+}
+
+.input {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 5px 2px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-list__remove-btn {
+  margin-bottom: 20px;
 }
